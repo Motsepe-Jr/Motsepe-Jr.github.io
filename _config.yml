@@ -4,6 +4,7 @@ title: Hanlin Cai
 #Comment out url when working locally to resolve base urls correctly
 url: 
 
+theme: jekyll-theme-minimal
 
 # Owner/author information
 owner:
