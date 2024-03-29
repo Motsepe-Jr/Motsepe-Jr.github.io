@@ -1,6 +1,6 @@
-# Hectopr Motsepe ✨
+# Hector Motsepe ✨
 
-Here is **Hanlin Cai (Lance, 蔡汉霖)**. This is my personal web repo. If you like it, please star it! 🥰
+Here is **Hector Motsepe**. This is my personal web repo. If you like it, please star it! 🥰
 
 ## Update and News
 
