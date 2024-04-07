@@ -16,7 +16,7 @@ title: Awards
 
 ## Honors
 
-- Dec 2020：Best Student in the Faculty<br> Bachelor Degree
+- Dec 2020：Best Student in the Faculty of CBE at University of Johannesburg<br> Bachelors Degree
 
 <div>
 <img src="/images/best.JPG">
