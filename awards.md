@@ -16,9 +16,12 @@ title: Awards
 
 ## Honors
 
-- Dec 2020：Best Student in the Faculty<br> Got Best Studen for my Bachelor Degree
+- Dec 2020：Best Student in the Faculty<br> Bachelor Degree
 
-<img src="./best.jpg" class="floatpic" width="360" height="480">
+<div>
+<img src="/images/best.JPG">
+</div>
+<br>
 
 
 
