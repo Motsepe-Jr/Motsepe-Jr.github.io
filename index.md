@@ -4,48 +4,53 @@ layout: page
 
 # About Me
 
-<img src="https://caihanlin.com/caihanlin.jpg" class="floatpic" width="360" height="480">
+<img src="./hector.jpg" class="floatpic" width="360" height="480">
 
-Here is **Hanlin Cai (Lance, 蔡汉霖)**.
+Here is **Hector Motsepe**.
 
-I am a senior undergrad majoring in **EECS** at Fuzhou University and Maynooth University (Combined degrees). Currently, I serve as a research assistant at the IIoT-Lab, advised by [Prof. Zhezhuang Xu](https://www.researchgate.net/profile/Zhezhuang-Xu) and [Dr. Meng Yuan](https://www.researchgate.net/profile/Meng-Yuan-4). I also spent a lovely summer research program with [Prof. Pietro Liò's team](https://www.cl.cam.ac.uk/~pl219/) at Cambridge University. Recently, I have been selected as an **AAAI UC Scholar**. I will be attending AAAI-24 in person, please feel free to chat with me!
+I am a Machine Learning Engineer at **Lexis Nexis AI**.  I hold a Master Degree (Deep Learning and Machine Learning) from University of Pretoria, advised by [Prof. Aurona Gerber](https://cs.uwc.ac.za/prof-a-gerber/). I have been awarded [Huawei Top Achiever Scholarship](https://www.up.ac.za/ebit-faculty-house/news/post_2965957-huawei-invests-over-r1m-in-bursaries-for-up-ebit-students-)
 
-If you are interested in any aspect of me, I would love to chat and collaborate, please email me at - *hanlin[dot]cai[at]ieee[dot]org*
+If you are interested in any aspect of me, I would love to chat and collaborate, please email me at - *hectormotsepe[at]gmail[dot]com*
 
 ## Academic Background
 
-**<font color='red'>[Highlight]</font> I am actively looking for PhD position to start in 2025 Fall. Contact me if you have any leads!**
+**<font color='red'>[Highlight]</font> I am actively looking for PhD position to start in 2024 Fall. Contact me if you have any leads!**
 
-- **Sep 2024 - Sep 2025：**Cambridge University (MPhil, EE)
-- **Sep 2020 - June 2024:** Maynooth University (BSc, EECS)
-- **Sep 2020 - June 2024:** Fuzhou University (BEng, EECS)
-- **June 2022 - Nov 2022:** Cambridge University (Intern)
+- **Sep 2021 - June 2023:** Unveristy of Pretoria (MS, CS)
+- **Jan 2020 - Dec 2020:** Univeristy of Johannesburg (Bcom, IS)
+- **Jan 2017 - Dec 2019:** Unveristy fo Johannesburg (Bcom, IS)
 
 ---
 
 ## Research Interests
 
-- Internet of Everything (IoE)
-- Cyber-Physical System
-- Industrial Informatics
+- Deep Learning (NLP/CV)
+- Reinforcement Learning 
+- Backpropagation (Straight Through Estimator)
 - Applied Machine Learning
-- [My latest research proposal](https://caihanlin.com/file/proposal-2023.pdf) 🔗
+- Proposals Coming Soon !!! [My first research proposal], [My second research proposal]
 
-My current research focuses on practical problems that artificial intelligence faces in real life. My interests are on the **Machine Learning** and its applications in **Industrial IoT**. In a word, advanced technologies like ML and IoT positively influence the life of everybody.  I wish to devote my talent to this meaningful cause and bring well-being to society.
+My research focuses on developing a **modular cognitive architecture** for autonomous agents that can continuously update its world model through experience and effectively integrate feedback across different modules. Key objectives include enabling bi-directional communication between the world model and low-level controllers, facilitating coordination among modules for task execution, and incorporating multi-modal inputs to enhance the environment representation within the world model. The overarching goal is to advance autonomous agents that can acquire new knowledge through experiential learning and adapt their behavior in unfamiliar situations by leveraging an evolving, comprehensive understanding of the world around them.
+
+My second research interest lies in exploring techniques to enable effective backpropagation through the discrete sampling process in large language models. Specifically, I aim to advance the **straight-through estimator (STE)** or develop novel methods to propagate gradients during the multi-step text generation process. Overcoming this challenge could unlock significant improvements in training large language models, leading to better performance in natural language processing tasks such as text generation, summarization, and machine translation. Ultimately, my goal is to contribute to the development of more capable and versatile language models that can positively impact a wide range of applications and benefit society.
 
 ---
 
+## Continuous Learning
+
+I have created a YouTube Channel to share my knowledge, and my understanding of deep learning concepts
+
+- [Deep Learning Youtube Channel](https://www.youtube.com/@aiguy_1999/videos)
+- [Software Engineering Youtube Channel](https://www.youtube.com/playlist?list=PLQ6srWwEK_uPNYSH0V_rtwNJIAFegoUue)
+
+
 ## News and Updates
 
-- **March 2024：**Very excited to get a MPhil offer from Engineering department at Cambridge University!
-- **Feb 2024：**Got a MSc offer from the CS department of UCL.
-- **Dec 2023：**Very excited to be selected as [AAAI-24 UC Scholar](https://aaai.org/aaai-conference/undergraduate-consortium-program/), see you in Canada!
-- **Dec 2023：**Got a MSc offer from the physics department of Imperial College London.
-- **Aug 2023：**Happy to be awarded the FEPG Scholarship.
-- **May 2023：**Happy to be awarded the XiamenAir Scholarship.
-- **May 2023：**Collected the Finalist Award in MCM**/**ICM 2023 (Top 1%).
-- **Jan 2023：**One paper accepted to ICAROB 2023, see you in Japan.
-- **Jun 2022：**Started research intern at [Cambridge AI Group](https://www.cl.cam.ac.uk/research/ai/), advised by Prof. Pietro Liò.
+- **Nov 2023: **Joined Lexis Nexis AI as a Machine Learning Engineer, contributing to cutting-edge projects in AI technology.
+- **Aug 2021: Joined Integrove (client: Anglo American Group), South Africa, Johannesburg: Spearheaded the implementation of machine learning models, revolutionizing variance analysis calculations and drastically reducing code complexity. Led a successful migration project to transition from on-premise infrastructure to the cloud, resulting in a significant cost reduction.
+- **Jan 2021: Worked as a Data Engineer at PBT Group Pty Ltd. (client: Old Mutual Insurer), South Africa, Johannesburg: Implemented distributed processing pipelines using Spark, achieving a remarkable 67% improvement in data processing time. Designed and optimized data engineering pipelines, streamlining data migration processes and eliminating manual uploads.
+- 2019-2020: Served as a Software Engineer (Machine Learning) at Alpexes  Pty Ltd., focusing on designing high-performance backend systems and integrating machine learning algorithms.
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Thrilled to be an AAAI-UC Scholar at <a href="https://twitter.com/hashtag/AAAI24?src=hash&amp;ref_src=twsrc%5Etfw">#AAAI24</a>, thanks to <a href="https://twitter.com/hashtag/AAAI?src=hash&amp;ref_src=twsrc%5Etfw">#AAAI</a> &amp; <a href="https://twitter.com/hashtag/GoogleExploreCSR?src=hash&amp;ref_src=twsrc%5Etfw">#GoogleExploreCSR</a> for the sponsorship. Grateful for the knowledge gained and new friendships formed.<br><br>Wonderful trip in Vancouver. Looking forward to staying connected with all.<a href="https://twitter.com/hashtag/AAAI24?src=hash&amp;ref_src=twsrc%5Etfw">#AAAI24</a> <a href="https://twitter.com/hashtag/Vancouver?src=hash&amp;ref_src=twsrc%5Etfw">#Vancouver</a> <a href="https://twitter.com/hashtag/GoogleExploreCSR?src=hash&amp;ref_src=twsrc%5Etfw">#GoogleExploreCSR</a> <a href="https://t.co/wUQUp8XlSM">pic.twitter.com/wUQUp8XlSM</a></p>&mdash; Hanlin CAI (seeking a PhD position 2025) (@lancecai2002) <a href="https://twitter.com/lancecai2002/status/1762210025173344260?ref_src=twsrc%5Etfw">February 26, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Excited to share my latest accomplishments! Completed my Master's in Deep Learning and Machine Learning from University of Pretoria, advised by Prof. Aurona Gerber. Joined Lexis Nexis AI as a Machine Learning Engineer, contributing to cutting-edge AI projects.<br><br>Currently seeking PhD opportunities for Fall 2024. If you have any leads, please reach out to me at hectormotsepe[at]gmail[dot]com. I'm passionate about Deep Learning, Reinforcement Learning, Backpropagation (Straight Through Estimator), and Applied Machine Learning.<br><br>Looking forward to further advancing my research and making impactful contributions to the field of AI. Onwards and upwards!<a href="https://twitter.com/hashtag/DeepLearning?src=hash&amp;ref_src=twsrc%5Etfw">#DeepLearning</a> <a href="https://twitter.com/hashtag/ReinforcementLearning?src=hash&amp;ref_src=twsrc%5Etfw">#ReinforcementLearning</a> <a href="https://twitter.com/hashtag/PhD?src=hash&amp;ref_src=twsrc%5Etfw">#PhD</a> <a href="https://twitter.com/hashtag/AI?src=hash&amp;ref_src=twsrc%5Etfw">#AI</a></p>&mdash; Hector Motsepe (@HectorMotsepe) <a href="https://twitter.com/HectorMotsepe/status/1642856725173344260?ref_src=twsrc%5Etfw">April 7, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
