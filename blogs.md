@@ -8,7 +8,7 @@ title: Blogs
 
 ### 2024
 
-- [AAAI 2024 温哥华参会实录](https://caihanlin.com/blogs/aaai-24/)
-- [24Fall，英国硕士项目申请实录](https://caihanlin.com/blogs/24fall/)
+- [AAAI 2024 温哥华参会实录](https://motsepe-jr.github.io/blogs/aaai-24/)
+
 
 
