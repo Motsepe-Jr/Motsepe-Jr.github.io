@@ -24,8 +24,7 @@
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <meta property="og:site_name" content="{{ site.title }}">
 
-{% if site.google_verify %}<!-- Webmaster Tools verfication -->
-<meta name="google-site-verification" content="{{ site.google_verify }}">{% endif %}
+<meta name="google-site-verification" content="PSoIUEoPlxPfNryi2gz6LpcfnK032gUeC_UhfhK_-YM" />
 {% if site.bing_verify %}<meta name="msvalidate.01" content="{{ site.bing_verify }}">{% endif %}
 
 {% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' | strip_slash }}{% endif %}{% endcapture %}
