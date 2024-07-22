@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /blogs/gelu/index.html
-title: GELU: The Activation Function That Bridges Deterministic and Stochastic Worlds
+title: "GELU: The Activation Function That Bridges Deterministic and Stochastic Worlds"
 ---
 
 # GELU: Gaussian Error Linear Units
