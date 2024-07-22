@@ -16,10 +16,10 @@ Activation functions are crucial components in neural networks, introducing non-
 <p style="text-align: center;">y = f(Σ(w_i * x_i) + b)</p>
 
 Where:
-   - x_i are inputs
-   - w_i are weights
-   - b is a bias term
-   - Σ denotes summation
+      - x_i are inputs
+      - w_i are weights
+      - b is a bias term
+      - Σ denotes summation
 
 Without activation functions, neural networks would be limited to learning linear transformations. The composition of linear functions is still linear:
 
@@ -38,6 +38,7 @@ One of the earliest activation functions, the sigmoid squishes the input values 
 The vanishing gradient problem occurs when the gradients of the loss function approach zero therefore making the network harder to train. As abs(x) increases, σ'(x) approaches 0, leading to vanishing gradients during backpropagation.
 
 ![Sigmoid Function](/blogs/assets/images_gelu/sigmoid.png)
+<p style="text-align: center;">Fig 1: Sigmoid Function and Its Derivative</p>
 
 The above graph indicates that the derivative (gradients) of the sigmoid function approaches zero as the absolute value of x increases.
 
@@ -52,7 +53,7 @@ While tanh offers a broader output range (-1 to 1), it still suffers from vanish
 
 
 ![Tanh Function](/blogs/assets/images_gelu/tanh.png)
-
+<p style="text-align: center;">Fig 2: Tanh Function and Its Derivative</p>
 ### 3. ReLU
 <br>
 
@@ -62,6 +63,7 @@ While tanh offers a broader output range (-1 to 1), it still suffers from vanish
 Both sigmoid and tanh compress an infinite input range into a finite output range. This compression leads to information loss, especially for inputs with large magnitudes.
 
 ![ReLU Function](/blogs/assets/images_gelu/relu.png)
+<p style="text-align: center;">Fig 3: ReLU Function and Its Derivative</p>
 
 ReLU gradient is 1 for all the positive inputs (x > 0), which helps mitigate the vanishing problem. At x = 0, the derivative is undefined (usually set to 0 or 1 in practice). However, ReLU introduces its own challenge: the "dying ReLU" problem, where neurons can become permanently inactive for all inputs. If a neuron's weights are updated such that it always receives negative inputs, it will never activate and never update (it dies).
 
@@ -76,7 +78,7 @@ The GeLU offers a novel approach:
 Where Φ(x) is the Cumulative Distribution Function (CDF) of the standard normal distribution. The Normal (or Gaussian) distribution is a probability distribution that appears frequently in nature and is central to many statistical methods. It's characterized by its bell-shaped curve and is defined by two parameters: the mean (μ) and standard deviation (σ). The author chooses the standard normal distribution because the neuron inputs tend to follow a normal distribution. Batch Norm, Central Limit Theorem, and Weight Init strategies support this assumption.
 
 ![CDF of Standard Normal Distribution](/blogs/assets/images_gelu/cdf.png)
-
+<p style="text-align: center;">Fig 4: Cumulative Distribution Function</p>
 The CDF of a probability distribution F(x) gives the probability that a random variable X takes on a value less than or equal to x: F(x) = P(X ≤ x). For example: For x = 0, Φ(0) ≈ 0.5 (there's a 50% chance of picking a number less than or equal to 0). As x increases, Φ(x) approaches 1 (it becomes more likely to pick a number less than x). As x decreases, Φ(x) approaches 0 (it becomes less likely to pick a number less than x).
 
 Since the cumulative distribution function of a Gaussian is often computed with the error function, the author defines the Gaussian Error Linear Unit (GELU) as:
@@ -86,7 +88,7 @@ $$
 $$
 <br>
 ### GELU combines properties from Dropout, zoneout, and ReLUs potentially offering:
-<br>
+
 #### Deterministic Property:
 
 ReLU is a deterministic activation function because for any given input, it always produces the same output:
@@ -110,7 +112,7 @@ GeLU multiplies the input by zero or one, but these values are stochastically de
 ### Mitigation of vanishing gradients, smooth, differentiable behavior
 
 ![GELU Smooth Function](/blogs/assets/images_gelu/gelu_smooth.png)
-
+<p style="text-align: center;">Fig 5: Smooth GeLU</p>
 As indicated in the above graph, GeLU offers a smoother transition as it greatly curves upward for positive inputs and softly approaches zero for negative inputs without sudden jumps or kinks. ReLU, on the other hand, is characterized by the sharp bend at x=0. This smoothness of GELU has significant implications for gradient flow during backpropagation. In ReLU, the gradient is either 0 (for negative inputs) or 1 (for positive inputs), with an undefined point at exactly x=0. This binary nature can cause problems, particularly the "dying ReLU" phenomenon, where neurons get stuck in a state where they always output zero, effectively becoming useless.
 <br>
 GELU sidesteps this issue elegantly. Its derivative is smooth and continuous everywhere, providing a non-zero gradient even for slightly negative inputs. This means that neurons using GELU are less likely to "die" compared to those using ReLU. Even if a neuron receives predominantly negative inputs, there's still a chance for it to recover and contribute meaningfully to the network's computations.
