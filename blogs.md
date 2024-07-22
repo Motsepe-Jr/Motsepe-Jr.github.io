@@ -8,7 +8,7 @@ title: Blogs
 
 ### 2024
 
-- [AAAI 2024 温哥华参会实录](https://motsepe-jr.github.io/blogs/aaai-24/)
+- [GELU: he Gaussian-Inspired Activation Function Revolutionizing Neural Networks](https://motsepe-jr.github.io/blogs/gelu/)
 
 
 
