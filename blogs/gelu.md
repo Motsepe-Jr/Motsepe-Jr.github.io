@@ -84,6 +84,10 @@ $$
 \text{GELU}(x) = x P(X \leq x) = x \Phi(x) = x \cdot \frac{1}{2}\left[1 + \text{erf}(x/\sqrt{2})\right]
 $$
 
+<br>
+
+<br/>
+
 ### GELU combines properties from Dropout, zoneout, and ReLUs potentially offering:
 
 #### Deterministic Property:
