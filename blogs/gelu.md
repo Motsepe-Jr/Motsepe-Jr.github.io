@@ -10,9 +10,12 @@ title: "GELU: The Activation Function That Bridges Deterministic and Stochastic 
 
 ![GELU Formula](/blogs/assets/images_gelu/formula.png)
 
+
 Activation functions are crucial components in neural networks, introducing non-linearity and enabling the network to learn complex patterns. From a mathematical standpoint, an activation function f(x) is a non-linear transformation applied to the output of a neuron:
 
+<centre>
 y = f(Σ(w_i * x_i) + b)
+</centre>
 
 Where:
 - x_i are inputs
@@ -22,41 +25,58 @@ Where:
 
 Without activation functions, neural networks would be limited to learning linear transformations. The composition of linear functions is still linear:
 
+<centre>
 f(g(x)) = (ax + b)(cx + d) = acx^2 + (ad + bc)x + bd
+</centre>
 
-This is still a linear function in terms of its parameters, limiting the network's expressivity. Non-linear activation functions allow the network to approximate any function, as per the Universal Approximation Theorem.
-
-Let's look at the historical transformation of activation functions to build the motivation behind GELU.
+This is still a linear function in terms of its parameters, limiting the network's expressivity. Non-linear activation functions allow the network to approximate any function, as per the Universal Approximation Theorem. Let's look at the historical transformation of activation functions to build the motivation behind GELU.
 
 ## A Brief History
+<br>
+
+</br>
 
 ### 1. Sigmoid Function 
+<br>
 
+</br>
+<centre>
 σ(x) = 1 / (1 + e^(-x))
+</centre>
 
 One of the earliest activation functions, the sigmoid squishes the input values into a range between 0 and 1. While it introduced non-linearity and had a clear probabilistic interpretation, it still suffered from the vanishing gradient problem in deep networks.
 
-The vanishing gradient problem occurs when the gradients of the loss function approach zero, therefore making the network harder to train. As |x| increases, σ'(x) approaches 0, leading to vanishing gradients during backpropagation.
+The vanishing gradient problem occurs when the gradients of the loss function approach zero therefore making the network harder to train. As abs(x) increases, σ'(x) approaches 0, leading to vanishing gradients during backpropagation.
 
 ![Sigmoid Function](/blogs/assets/images_gelu/sigmoid.png)
 
 The above graph indicates that the derivative (gradients) of the sigmoid function approaches zero as the absolute value of x increases.
 
 ### 2. Tanh Function
+<br>
 
+</br>
+<centre>
 tanh(x) = (e^x - e^(-x)) / (e^x + e^(-x))
+</centre>
 
 While tanh offers a broader output range (-1 to 1), it still suffers from vanishing gradients for large inputs:
 
+<centre>
 tanh'(x) = 1 - tanh^2(x)
+</centre>
 
-As |x| increases, tanh'(x) also approaches 0.
+As abs(x) increases, tanh'(x) also approaches 0.
 
 ![Tanh Function](/blogs/assets/images_gelu/tanh.png)
 
 ### 3. ReLU
+<br>
 
+</br>
+<centre>
 ReLU(x) = max(0, x)
+</centre>
 
 Both sigmoid and tanh compress an infinite input range into a finite output range. This compression leads to information loss, especially for inputs with large magnitudes.
 
@@ -65,13 +85,16 @@ Both sigmoid and tanh compress an infinite input range into a finite output rang
 ReLU gradient is 1 for all the positive inputs (x > 0), which helps mitigate the vanishing problem. At x = 0, the derivative is undefined (usually set to 0 or 1 in practice). However, ReLU introduces its own challenge: the "dying ReLU" problem, where neurons can become permanently inactive for all inputs. If a neuron's weights are updated such that it always receives negative inputs, it will never activate and never update (it dies).
 
 ## GELU: Bridging Deterministic and Stochastic Approaches
+<br>
 
+</br>
 Gaussian Error Linear Unit [(GeLU)](https://arxiv.org/pdf/1606.08415) is one of the most used activation functions in deep learning. The activation function was used in [GPT-3](https://arxiv.org/abs/2005.14165) (Brown et al., 2020), and [BERT](https://arxiv.org/pdf/1810.04805) (Devlin et al., 2018). 
 
 The GeLU offers a novel approach:
 
+<centre>
 GELU(x) = x * Φ(x)
-
+</centre>
 Where Φ(x) is the Cumulative Distribution Function (CDF) of the standard normal distribution. The Normal (or Gaussian) distribution is a probability distribution that appears frequently in nature and is central to many statistical methods. It's characterized by its bell-shaped curve and is defined by two parameters: the mean (μ) and standard deviation (σ). The author chooses the standard normal distribution because the neuron inputs tend to follow a normal distribution. Batch Norm, Central Limit Theorem, and Weight Init strategies support this assumption.
 
 ![CDF of Standard Normal Distribution](/blogs/assets/images_gelu/cdf.png)
@@ -80,24 +103,28 @@ The CDF of a probability distribution F(x) gives the probability that a random v
 
 Since the cumulative distribution function of a Gaussian is often computed with the error function, the author defines the Gaussian Error Linear Unit (GELU) as:
 
+<centre>
 $$
 \text{GELU}(x) = x P(X \leq x) = x \Phi(x) = x \cdot \frac{1}{2}\left[1 + \text{erf}(x/\sqrt{2})\right]
 $$
-
+</centre>
 <br>
 
 <br/>
 
 ### GELU combines properties from Dropout, zoneout, and ReLUs potentially offering:
+<br>
 
+<br/>
 #### Deterministic Property:
 
 ReLU is a deterministic activation function because for any given input, it always produces the same output:
 
+<centre>
 ReLU(x) = max(x, 0)
 
 ReLU'(x) = {1 if x > 0, 0 otherwise}
-
+</centre>
 #### Stochastic: Dropout
 
 Dropout, while not an activation function per se, introduces stochasticity (randomness) into the network:
