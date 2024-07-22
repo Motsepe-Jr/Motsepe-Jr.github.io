@@ -114,6 +114,27 @@ As indicated in the above graph, GeLU offers a smoother transition as it greatly
 
 GELU sidesteps this issue elegantly. Its derivative is smooth and continuous everywhere, providing a non-zero gradient even for slightly negative inputs. This means that neurons using GELU are less likely to "die" compared to those using ReLU. Even if a neuron receives predominantly negative inputs, there's still a chance for it to recover and contribute meaningfully to the network's computations.
 
+## Summary
+
+This blog explored:
+
+1. **The Evolution of Activation Functions:**
+   - From sigmoid and tanh to ReLU, highlighting their strengths and limitations.
+   - The persistent challenge of vanishing gradients in deep networks.
+
+2. **GELU's Unique Approach:**
+   - Combines deterministic and stochastic properties.
+   - Utilizes the cumulative distribution function of the standard normal distribution.
+
+3. **Key Advantages of GELU:**
+   - Smooth, differentiable behavior that mitigates vanishing gradients.
+   - Reduces the "dying neuron" problem associated with ReLU.
+   - Offers a balance between deterministic activation (like ReLU) and stochastic regularization (like Dropout).
+
+4. **Mathematical Foundations:**
+   - Explores the underlying principles and formulas that define GELU.
+   - Discusses how GELU relates to probability theory and statistical concepts.
+
 ## References
 
 - Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., ... & Amodei, D. (2020). Language models are few-shot learners. arXiv preprint arXiv:2005.14165.
