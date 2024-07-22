@@ -64,17 +64,17 @@ Both sigmoid and tanh compress an infinite input range into a finite output rang
 
 ReLU gradient is 1 for all the positive inputs (x > 0), which helps mitigate the vanishing problem. At x = 0, the derivative is undefined (usually set to 0 or 1 in practice). However, ReLU introduces its own challenge: the "dying ReLU" problem, where neurons can become permanently inactive for all inputs. If a neuron's weights are updated such that it always receives negative inputs, it will never activate and never update (it dies).
 
-## GELU: Bridging Deterministic and Stochastic Approaches
+### GELU: Bridging Deterministic and Stochastic Approaches
 
-Gaussian Error Linear Unit [(GeLU)](https://arxiv.org/pdf/1606.08415) is one of the most used activation functions in deep learning. The activation function was used in [GPT-3](https://arxiv.org/abs/2005.14165) (Brown et al., 2020), and [BERT](https://arxiv.org/pdf/1810.04805) (Devlin et al., 2018). 
+Gaussian Error Linear Unit [(GeLU)](https://arxiv.org/pdf/1606.08415) is one of the most used activation functions in deep learning. The activation function was used in [GPT-3](https://arxiv.org/abs/2005.14165) (Brown et al., 2020), and [BERT](https://arxiv.org/pdf/1810.04805) (Devlin et al., 2018).
 
 The GeLU offers a novel approach:
 
 GELU(x) = x * Φ(x)
 
-Where Φ(x) is the Cumulative Distribution Function (CDF) of the standard normal distribution. The Normal (or Gaussian) distribution is a probability distribution that appears frequently in nature and is central to many statistical methods. It's characterized by its bell-shaped curve and is defined by two parameters: the mean (μ) and standard deviation (σ). The author chooses the standard normal distribution because the neuron inputs tend to follow a normal distribution. Batch Norm, Central Limit Theorem, and Weight Init strategies support this assumption.
+Where Φ(x) is the Cumulative Distribution Function (CDF) of the standard normal distribution. The Normal (or Gaussian) distribution is a probability distribution that appears frequently in nature and is central to many statistical methods. It's characterized by its bell-shaped curve and is defined by two parameters: the mean (μ) and standard deviation (σ). The author chooses the standard normal distribution because the neuron inputs tend to follow a normal distribution. Batch Norm, Central Limit Theorem, and Weight Init strategies contribute to this.
 
-![CDF of Standard Normal Distribution](/blogs/assets/images_gelu/cdf.png)
+![CDF of Normal Distribution](/blogs/assets/images_gelu/cdf.png)
 
 The CDF of a probability distribution F(x) gives the probability that a random variable X takes on a value less than or equal to x: F(x) = P(X ≤ x). For example: For x = 0, Φ(0) ≈ 0.5 (there's a 50% chance of picking a number less than or equal to 0). As x increases, Φ(x) approaches 1 (it becomes more likely to pick a number less than x). As x decreases, Φ(x) approaches 0 (it becomes less likely to pick a number less than x).
 
@@ -108,7 +108,7 @@ GeLU multiplies the input by zero or one, but these values are stochastically de
 
 ### Mitigation of vanishing gradients, smooth, differentiable behavior
 
-![GELU Smooth Function](/blogs/assets/images_gelu/gelu_smooth.png)
+![GELU Smooth Behavior](/blogs/assets/images_gelu/gelu_smooth.png)
 
 As indicated in the above graph, GeLU offers a smoother transition as it greatly curves upward for positive inputs and softly approaches zero for negative inputs without sudden jumps or kinks. ReLU, on the other hand, is characterized by the sharp bend at x=0. This smoothness of GELU has significant implications for gradient flow during backpropagation. In ReLU, the gradient is either 0 (for negative inputs) or 1 (for positive inputs), with an undefined point at exactly x=0. This binary nature can cause problems, particularly the "dying ReLU" phenomenon, where neurons get stuck in a state where they always output zero, effectively becoming useless.
 
