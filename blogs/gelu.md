@@ -15,8 +15,7 @@ Activation functions are crucial components in neural networks, introducing non-
 
 <p style="text-align: center;">y = f(Σ(w_i * x_i) + b)</p>
 
-Where:
-      - x_i are inputs
+Where:- x_i are inputs
       - w_i are weights
       - b is a bias term
       - Σ denotes summation
