@@ -16,26 +16,25 @@ Activation functions are crucial components in neural networks, introducing non-
 <p style="text-align: center;">y = f(Σ(w_i * x_i) + b)</p>
 
 Where:
-- x_i are inputs
-- w_i are weights
-- b is a bias term
-- Σ denotes summation
+   - x_i are inputs
+   - w_i are weights
+   - b is a bias term
+   - Σ denotes summation
 
 Without activation functions, neural networks would be limited to learning linear transformations. The composition of linear functions is still linear:
-<br>
 
+<br>
 <p style="text-align: center;">f(g(x)) = (ax + b)(cx + d) = acx^2 + (ad + bc)x + bd</p>
 <br>
 This is still a linear function in terms of its parameters, limiting the network's expressivity. Non-linear activation functions allow the network to approximate any function, as per the Universal Approximation Theorem. Let's look at the historical transformation of activation functions to build the motivation behind GELU.
 
 ## A Brief History
-<br>
 ### 1. Sigmoid Function 
 <br>
 <p style="text-align: center;">σ(x) = 1 / (1 + e^(-x))</p>
 
 One of the earliest activation functions, the sigmoid squishes the input values into a range between 0 and 1. While it introduced non-linearity and had a clear probabilistic interpretation, it still suffered from the vanishing gradient problem in deep networks.
-
+<br>
 The vanishing gradient problem occurs when the gradients of the loss function approach zero therefore making the network harder to train. As abs(x) increases, σ'(x) approaches 0, leading to vanishing gradients during backpropagation.
 
 ![Sigmoid Function](/blogs/assets/images_gelu/sigmoid.png)
@@ -47,11 +46,10 @@ The above graph indicates that the derivative (gradients) of the sigmoid functio
 <p style="text-align: center;">tanh(x) = (e^x - e^(-x)) / (e^x + e^(-x))</p>
 
 
-While tanh offers a broader output range (-1 to 1), it still suffers from vanishing gradients for large inputs:
+While tanh offers a broader output range (-1 to 1), it still suffers from vanishing gradients for large inputs. As abs(x) increases, tanh'(x) also approaches 0:
 
 <p style="text-align: center;">tanh'(x) = 1 - tanh^2(x)</p>
 
-As abs(x) increases, tanh'(x) also approaches 0.
 
 ![Tanh Function](/blogs/assets/images_gelu/tanh.png)
 
@@ -89,7 +87,6 @@ $$
 <br>
 ### GELU combines properties from Dropout, zoneout, and ReLUs potentially offering:
 <br>
-
 #### Deterministic Property:
 
 ReLU is a deterministic activation function because for any given input, it always produces the same output:
@@ -104,7 +101,7 @@ ReLU'(x) = {1 if x > 0, 0 otherwise}
 Dropout, while not an activation function per se, introduces stochasticity (randomness) into the network:
 <p style="text-align: center;">
 y = f(Σ(w_i * x_i * z_i) + b)
-<p>
+</p>
 Where z_i ~ Bernoulli(p), i.e., z_i is 1 with probability p and 0 with probability 1-p.
 During training, this randomly "drops out" neurons, creating an ensemble effect. At inference time, this is typically approximated by scaling the weights by p.
 
