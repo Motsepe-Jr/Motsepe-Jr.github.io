@@ -80,7 +80,7 @@ Where Φ(x) is the Cumulative Distribution Function (CDF) of the standard normal
 The CDF of a probability distribution F(x) gives the probability that a random variable X takes on a value less than or equal to x: F(x) = P(X ≤ x). For example: For x = 0, Φ(0) ≈ 0.5 (there's a 50% chance of picking a number less than or equal to 0). As x increases, Φ(x) approaches 1 (it becomes more likely to pick a number less than x). As x decreases, Φ(x) approaches 0 (it becomes less likely to pick a number less than x).
 
 Since the cumulative distribution function of a Gaussian is often computed with the error function, the author defines the Gaussian Error Linear Unit (GELU) as:
-
+<br>
 $$
 \text{GELU}(x) = x P(X \leq x) = x \Phi(x) = x \cdot \frac{1}{2}\left[1 + \text{erf}(x/\sqrt{2})\right]
 $$
@@ -92,9 +92,7 @@ $$
 ReLU is a deterministic activation function because for any given input, it always produces the same output:
 
 <p style="text-align: center;">
-ReLU(x) = max(x, 0)
-
-ReLU'(x) = {1 if x > 0, 0 otherwise}
+ReLU(x) = max(x, 0); ReLU'(x) = {1 if x > 0, 0 otherwise}
 </p>
 #### Stochastic: Dropout
 
@@ -114,7 +112,7 @@ GeLU multiplies the input by zero or one, but these values are stochastically de
 ![GELU Smooth Function](/blogs/assets/images_gelu/gelu_smooth.png)
 
 As indicated in the above graph, GeLU offers a smoother transition as it greatly curves upward for positive inputs and softly approaches zero for negative inputs without sudden jumps or kinks. ReLU, on the other hand, is characterized by the sharp bend at x=0. This smoothness of GELU has significant implications for gradient flow during backpropagation. In ReLU, the gradient is either 0 (for negative inputs) or 1 (for positive inputs), with an undefined point at exactly x=0. This binary nature can cause problems, particularly the "dying ReLU" phenomenon, where neurons get stuck in a state where they always output zero, effectively becoming useless.
-
+<br>
 GELU sidesteps this issue elegantly. Its derivative is smooth and continuous everywhere, providing a non-zero gradient even for slightly negative inputs. This means that neurons using GELU are less likely to "die" compared to those using ReLU. Even if a neuron receives predominantly negative inputs, there's still a chance for it to recover and contribute meaningfully to the network's computations.
 
 ## Summary
