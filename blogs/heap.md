@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /blogs/gelu/index.html
+permalink: /blogs/heap/index.html
 title: "Understanding Heap Building: O(n log n) vs. O(n)"
 ---
 
