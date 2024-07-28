@@ -338,7 +338,7 @@ This efficient heap building algorithm is crucial in various applications, such 
 
 ## References
 
-Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). Introduction to Algorithms (3rd ed.). MIT Press.
-Sedgewick, R., & Wayne, K. (2011). Algorithms (4th ed.). Addison-Wesley Professional.
-Rust Documentation. (n.d.). std::collections::BinaryHeap. https://doc.rust-lang.org/std/collections/struct.BinaryHeap.html
-Stackoerflow: https://stackoverflow.com/questions/9755721/how-can-building-a-heap-be-on-time-complexity
+- Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). Introduction to Algorithms (3rd ed.). MIT Press.
+- Sedgewick, R., & Wayne, K. (2011). Algorithms (4th ed.). Addison-Wesley Professional.
+- Rust Documentation. (n.d.). std::collections::BinaryHeap. https://doc.rust-lang.org/std/collections/struct.BinaryHeap.html
+- Stackoerflow: https://stackoverflow.com/questions/9755721/how-can-building-a-heap-be-on-time-complexity
