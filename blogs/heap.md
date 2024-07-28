@@ -158,7 +158,7 @@ We only heapify the non-leaf nodes, which at most are n/2 nodes. The heapify ope
    / \       / \
    4   5     6   7
    / \ / \   / \
-   8 9 10  11 12 14
+   8 9 10 11 12 14
 
 At each height:
 - 0: there are n/2^1 (here 13/2 ≈ 7) nodes
