@@ -24,13 +24,13 @@ For instance, we can convert the following tree into an array structure (and vic
           /  \ /  \
          7   8 3   5
 
-1. The root at index 0 -> `[15]`
-2. Its left child (10) is at index (2*0 + 1) -> `[15, 10]`
-3. Its right child (9) is at index (2*0 + 2) -> `[15, 10, 9]`
-4. Left child of (10): at index (2*1 + 1) -> `[15, 10, 9, 7]`
-5. Right child of (10): at index (2*1 + 2) -> `[15, 10, 9, 7, 8]`
-6. Left child of (9): at index (2*2 + 1) -> `[15, 10, 9, 7, 8, 3]`
-7. Right child of (9): at index (2*2 + 2) -> `[15, 10, 9, 7, 8, 3, 5]`
+- The root at index 0 -> `[15]`
+- Its left child (10) is at index (2*0 + 1) -> `[15, 10]`
+- Its right child (9) is at index (2*0 + 2) -> `[15, 10, 9]`
+- Left child of (10): at index (2*1 + 1) -> `[15, 10, 9, 7]`
+- Right child of (10): at index (2*1 + 2) -> `[15, 10, 9, 7, 8]`
+- Left child of (9): at index (2*2 + 1) -> `[15, 10, 9, 7, 8, 3]`
+- Right child of (9): at index (2*2 + 2) -> `[15, 10, 9, 7, 8, 3, 5]`
 
 In a previous [blog post](https://motsepe-jr.github.io/blogs/dijkstra/), we explored Dijkstra's Algorithm, which employs a priority queue to process vertices based on their current known shortest distance. This approach enhances the time complexity to `O((V + E) log V)`, compared to using a normal queue data structure, which results in `O(V^2)` due to the need to search for the minimum distance vertex in each iteration.
 
@@ -152,13 +152,13 @@ When we build (initialize) the heap from an unsorted array of elements, the time
 
 We only heapify the non-leaf nodes, which at most are n/2 nodes. The heapify operation takes more time for nodes closer to the root and less time for nodes closer to the leaves. Consider the following tree structure:
 
-         1
-      /     \
-    2         3
-   / \       / \
-   4   5     6   7
-   / \ / \   / \
-   8 9 10 11 12 14
+                   1
+                /     \
+               2       3
+             /   \    /   \
+            4     5  6      7
+          /   \  /   \    /   \
+        8     9 10    11 12     14
 
 At each height:
 - 0: there are n/2^1 (here 13/2 ≈ 7) nodes
