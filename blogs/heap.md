@@ -18,11 +18,11 @@ Priority Queues are commonly implemented using **Heaps**. A heap is a complete b
 
 For instance, we can convert the following tree into an array structure (and vice versa): `[15, 10, 9, 7, 8, 3, 5]`:
 
-      15
-     /  \
-    10   9
-   / \  / \
-   7  8 3  5
+             15
+            /  \
+           10   9
+          /  \ /  \
+         7   8 3   5
 
 1. The root at index 0 -> `[15]`
 2. Its left child (10) is at index (2*0 + 1) -> `[15, 10]`
