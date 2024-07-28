@@ -161,10 +161,10 @@ We only heapify the non-leaf nodes, which at most are n/2 nodes. The heapify ope
         8     9 10    11 12     14
 
 At each height:
-- 0: there are n/2^1 (here 13/2 ≈ 7) nodes
-- 1: there are n/2^2 (here 13/4 ≈ 3) nodes
-- 2: there are n/2^3 (here 13/8 ≈ 2) nodes
-- 3: there are n/2^4 (here 13/16 ≈ 1) node
+-  there are n/2^1 (here 13/2 ≈ 7) nodes
+-  there are n/2^2 (here 13/4 ≈ 3) nodes
+-  there are n/2^3 (here 13/8 ≈ 2) nodes
+-  there are n/2^4 (here 13/16 ≈ 1) node
 
 So, there are n/2^(h+1) nodes for height h.
 
@@ -326,6 +326,7 @@ fn main() {
 ```
 
 ## Conclusion
+
 In this blog post, we explored the O(N) heap building algorithm, which is more efficient than the O(N log N) approach when we have all the data available upfront. We discussed the mathematical reasoning behind its time complexity and provided a Rust implementation of a MinHeap with this efficient building method.
 The key takeaways are:
 
