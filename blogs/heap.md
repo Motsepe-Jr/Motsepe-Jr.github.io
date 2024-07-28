@@ -22,7 +22,7 @@ For instance, we can convert the following tree into an array structure (and vic
      /  \
     10   9
    / \  / \
-  7  8 3    5
+   7  8 3  5
 
 1. The root at index 0 -> `[15]`
 2. Its left child (10) is at index (2*0 + 1) -> `[15, 10]`
@@ -156,9 +156,9 @@ We only heapify the non-leaf nodes, which at most are n/2 nodes. The heapify ope
       /     \
     2         3
    / \       / \
-  4   5     6   7
- / \ / \   / \
-8 9 10  11 12 14
+   4   5     6   7
+   / \ / \   / \
+   8 9 10  11 12 14
 
 At each height:
 - 0: there are n/2^1 (here 13/2 ≈ 7) nodes
