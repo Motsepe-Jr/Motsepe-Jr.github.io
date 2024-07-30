@@ -4,7 +4,7 @@ permalink: /blogs/heap/index.html
 title: "Understanding Heap Building: O(n log n) vs. O(n)"
 ---
 
-# Understanding Heap Building
+# Understanding Heap Building Algorithm
 
 **Date:** July 27, 2024 | **Estimated Reading Time:** 25 min | **Author:** Hector Motsepe
 
