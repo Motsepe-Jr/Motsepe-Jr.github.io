@@ -49,8 +49,8 @@ The **StepLR** start with a high learning rate and then reduce it at each iterca
 ```python
 @dataclass
 class StepLR:
-    max_lr: float = 3e-4
-    max_iters: int = 1000
+    max_lr: float = 6e-4
+    max_iters: int = 50
     gamma: float = 0.95
 
     def __call__(self, iteration: int) -> float:
@@ -61,7 +61,7 @@ The **MultiStepLR** starts with higher learning rate and then reduce it after re
 ```python
 @dataclass
 class MultiStepLR:
-    max_lr: float = 3e-4
+    max_lr: float = 6e-4
     max_iters: int = 50
     gamma: float = 0.95
     milestones: List[int] = (15, 30, 45)
@@ -72,6 +72,58 @@ class MultiStepLR:
 
 ![Learning Rate Loss](/blogs/assets/learningrate/schedules.png)
 <p style="text-align: center;">Fig 2: Learning Rate Schedules</p>
+
+
+The **LinearLR**  decreases linearly from the initial learning rate (self.max_lr) to zero over the course of the training. It starts at self.max_lr (the maximum learning rate) As iteration increases, the learning rate decreases linearly. When iteration reaches self.max_iters, the learning rate becomes 0. The learning rate reached the Final Loss of 3.830209. I think the reason it is better than MultiStep and StepLR is because the iteraction determine the rate of decay and not gamma.
+
+```python
+@dataclass
+class LinearLR:
+    max_lr: float = 6e-4
+    max_iters: int = 50
+
+    def __call__(self, iteration: int) -> float:
+        return self.max_lr * (1 - iteration / self.max_iters)
+```
+The **ExponentialLR** The learning rate decreases exponentially with each iteration. This means that the learning rate will drop rapidly at the beginning of the training and more slowly as training progresses. Exponential decay is often used to quickly reduce the learning rate early in training and then slow down the rate of decay as the model approaches convergence. The Final Loss: 4.263788 and had the best training stability score: 0.9187
+
+```python
+@dataclass
+class ExponentialScheduler:
+    max_lr: float = 6e-4
+    gamma: float = 0.95
+
+    def __call__(self, iteration: int) -> float:
+        return self.max_lr * (self.gamma ** iteration)
+```
+ The **CosineScheduler** is one of the mostly used learning rate schedule. The learning rate starts from a minimum value and increases linearly during the warmup phase (0 to max_lr). After the warmup phase, the learning rate follows a cosine decay schedule from a maximum value to a minimum value (max_lr to min_lr) over a specified number of iterations. Cosine Annealing had a stable training run 0.87 and final loss of 4.081490
+
+ ```python
+ @dataclass
+class CosineScheduler:
+    max_lr: float = 6e-4
+    min_lr: float = 3e-5 # AK max_lr * 0.1
+    warmup_iters: int = 1000
+    max_iters: int = 100_000
+
+    def __call__(self, iteration: int) -> float:
+        if iteration < self.warmup_iters:
+            return self.max_lr * iteration / self.warmup_iters
+
+        if iteration > self.max_iters:
+            return self.min_lr
+
+        decay_ratio = (iteration - self.warmup_iters) / (self.max_iters - self.warmup_iters)
+        assert 0 <= decay_ratio <= 1
+
+        coeff = 0.5 * (1.0 + math.cos(math.pi * decay_ratio))
+        return self.min_lr + coeff * (self.max_lr - self.min_lr)
+```
+
+![Learning Rate Loss](/blogs/assets/learningrate/norm.png)
+<p style="text-align: center;">Fig 3: Gradient Norm</p>
+
+
 
 References 
 - Murphy, Kevin P. (2012). Machine Learning: A Probabilistic Perspective. Cambridge: MIT Press. p. 247. ISBN 978-0-262-01802-9.
