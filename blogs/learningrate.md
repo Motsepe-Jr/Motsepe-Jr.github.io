@@ -209,3 +209,5 @@ class CyclicLR:
 
 References 
 - Murphy, Kevin P. (2012). Machine Learning: A Probabilistic Perspective. Cambridge: MIT Press. p. 247. ISBN 978-0-262-01802-9.
+  
+### - Code for Reproducibility can be found here: https://github.com/Motsepe-Jr/gpt2
