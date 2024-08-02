@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /blogs/gelu/index.html
+permalink: /blogs/learningrate/index.html
 title: "Evaluating Types of Learning Rates on Mr. Karpathy's GPT-2"
 ---
 
