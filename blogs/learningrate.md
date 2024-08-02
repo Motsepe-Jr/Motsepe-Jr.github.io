@@ -144,7 +144,7 @@ class PolynomialLR:
         return (self.max_lr - self.min_lr) * (1 - iteration / self.max_iters) ** self.power + self.min_lr
 ```
 
- The **OneCycleLR** is a variation of the cyclic learning rate that includes a single cycle with a warmup and cooldown period. Almost similar to Annealine Cosine, This scheduler starts with a low learning rate, increases it to a maximum, and then decreases it again. This approach can help the model quickly converge to a good solution while maintaining stability. had the best training stability of 0.9388
+ The **OneCycleLR** is a variation of the cyclic learning rate that includes a single cycle with a warmup and cooldown period. Almost similar to Annealine Cosine, This scheduler starts with a low learning rate, increases it to a maximum, and then decreases it again. This approach can help the model quickly converge to a good solution while maintaining stability. had the best training stability of 0.9388 and the lowest loss; Final Loss: 3.355333
 
   The policy is designed to maximize performance by first rapidly increasing the learning rate to explore the loss landscape and then gradually decreasing it to fine-tune the model. 
 
