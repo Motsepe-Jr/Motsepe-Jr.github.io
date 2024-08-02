@@ -166,8 +166,7 @@ class OneCycleLR:
 ![Learning Rate Loss](/blogs/assets/learningrate/time.png)
 <p style="text-align: center;">Fig 4: Training time</p>
 
-
-The **CosineAnnealingWarmRestarts** This scheduler combines the benefits of cosine annealing with periodic resets, potentially allowing the model to escape local minima and explore different regions of the loss landscape.
+The **CosineAnnealingWarmRestarts**: Ther Fastest scheduler: CosineAnnealingWarmRestarts (2240.12 seconds) and Slowest scheduler was MultiStep (2397.08 seconds). This CosineAnnealingWarmRestarts scheduler combines the benefits of cosine annealing with periodic resets, potentially allowing the model to escape local minima and explore different regions of the loss landscape.
 
 - Warm Restarts: Periodically resetting the learning rate to a higher value can help the model escape local minima and continue improving. However, this can cause spikes in the norm and loss as shown in Fig 1 and 3. The training stability of was 0.80
 
