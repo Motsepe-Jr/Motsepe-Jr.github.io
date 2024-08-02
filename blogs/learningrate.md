@@ -14,9 +14,7 @@ Learning rate determine the step size in an optimization algorithm at each itera
 
 Setting the learning rate comes with trade off between the rate of convergence and overshooting. High learning rate will make the learning jump over minima but low learning rate will take time to converge or even get stuck in an undesiracblke local minima. So, we need to find a sweet spot or adapt the learning rate during the training steps. Research scientist have developed come up decay based learning rate where we gradually reduce learning rate over time, and allow the model to make larger updates initially, and then refine its parameter with smaller updates as training progress. This avoid over shooting around the optimum. One the other hand Step/Time based Alter learning rate based on the previous learning rate of the previous time iteration. 
 
-<iframe src="/blogs/assets/learningrate/trainging_loss" width="100%" height="600px"></iframe>
-
-
+![Learning Rate Loss](/blogs/assets/learningrate/loss.png)
 
 
 
