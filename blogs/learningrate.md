@@ -4,17 +4,39 @@ permalink: /blogs/gelu/index.html
 title: "Evaluating Types of Learning Rates on Mr. Karpathy's GPT-2"
 ---
 
-# Evaluating Learning Rates Scheduling Techniques on Mr. Karpathy's GPT-2
+## Evaluating Learning Rate Scheduling Techniques on Mr. Karpathy's GPT-2
 
-**Date:** August 02, 2024 | **Estimated Reading Time:** 20 min | **Author:** Hector Motsepe
+**Date:** August 02, 2024  
+**Estimated Reading Time:** 20 min  
+**Author:** Hector Motsepe
 
-Recently, Mr. Andrej karpathy trained GPT-2 from scratch using the Consine Schedule learning rate, so I thought it would be cool to test different learning rate scheduling technqiues and compare how they improve the AK's GPT-2 model performance, convergence speed and training stability. Before we get ahead of ourself, lets build the intuition first. 
+Recently, Mr. Andrej Karpathy trained GPT-2 from scratch using the Cosine Schedule learning rate. Inspired by this, I decided to test various learning rate scheduling techniques to see how they improve the performance, convergence speed, and training stability of AK's GPT-2 model.
 
-Learning rate determine the step size in an optimization algorithm at each iteration while moving toward a minimum of a loss function (Murphy, 2012). It represent the speed at which deep learning model "learns" as it influnces to what extend newly aquired information overides old information. The gradient of the loss determine the descent direction, and the learning rate determine how big a step is taken in that direction. 
+### Understanding Learning Rates
 
-Setting the learning rate comes with trade off between the rate of convergence and overshooting. High learning rate will make the learning jump over minima but low learning rate will take time to converge or even get stuck in an undesiracblke local minima. So, we need to find a sweet spot or adapt the learning rate during the training steps. Research scientist have developed come up decay based learning rate where we gradually reduce learning rate over time, and allow the model to make larger updates initially, and then refine its parameter with smaller updates as training progress. This avoid over shooting around the optimum. One the other hand Step/Time based Alter learning rate based on the previous learning rate of the previous time iteration. 
+- **Definition:** Learning rates determine the step size in an optimization algorithm at each iteration, guiding the movement towards the minimum of a loss function (Murphy, 2012).
+- **Importance:** Learning rates influence how newly acquired information overrides old information, affecting how the model "learns."
+- **Function:** The gradient of the loss determines the descent direction, while the learning rate determines the step size in that direction.
+
+### Setting the Learning Rate
+
+- **Trade-offs:** Balancing between the rate of convergence and overshooting is crucial.
+  - **High Learning Rate:** Can cause the learning to jump over minima.
+  - **Low Learning Rate:** Can lead to slow convergence or getting stuck in undesirable local minima.
+- **Adaptation:** Finding a sweet spot or adapting the learning rate during training is essential.
+
+### Techniques
+
+- **Decay-Based Learning Rate:** Gradually reducing the learning rate over time allows the model to make larger updates initially and smaller updates as training progresses, avoiding overshooting around the optimum.
+- **Step/Time-Based Learning Rate:** Altering the learning rate based on previous iterations.
+
+
+### Experimentation
+
 
 ![Learning Rate Loss](/blogs/assets/learningrate/loss.png)
+
+## Learning rates 
 
 
 
